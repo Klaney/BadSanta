@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html ng-app="SantaApp">
+<head>
+	<base href="/">
+	<title>Bad Santa</title>
+	<!-- Latest compiled and minified CSS & JS -->
+	<link rel="stylesheet" media="screen" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="style/style.css">
+	<!-- jQuery CDN -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<!-- Bootstrap 4 CDN -->
+    <script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.2/angular.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.2/angular-route.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular-resource.js"></script>
+	<script src="app/services.js"></script>
+	<script src="app/controllers.js"></script>
+	<script src="app/app.js"></script>
+
+</head>
+<body>
+	<div class="container">
+	<nav class="navbar navbar-dark bg-primary"  ng-controller="NavCtrl">
+	  <a class="navbar-brand" href="/">BAAAAD SanTAAAAAA!</a>
+	  <ul class="nav navbar-nav">
+	    <li class="nav-item">
+	      	<a class="nav-link" href="/badsanta">Create a Bad Santa</a>
+	    </li>
+	    <li class="nav-item">
+	      	<a class="nav-link" href="/goodsanta">Create a Good Santa</a>
+	    </li>
+	    <li class="nav-item">
+	      	<a class="nav-link" href="/about">About</a>
+	    </li>
+	    <li  class="nav-item">
+	    	<a class="nav-link" href="/signup" ng-hide="isLoggedIn()">Sign up!</a>
+	    </li>
+	    <li  class="nav-item">
+	    	<a class="nav-link" href="/login" ng-hide="isLoggedIn()">Login</a>
+	    </li>
+	    <li  class="nav-item">
+	    	<a class="nav-link" ng-click="logout()" ng-show="isLoggedIn()">Logout</a>
+	    </li>
+	    </ul>
+    </nav>
+  
+	<ng-view></ng-view>
+  </div>
+</body>
+</html>

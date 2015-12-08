@@ -9,10 +9,13 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^0.8.5",
     "body-parser": "^1.14.1",
     "express": "^4.13.3",
     "express-jwt": "^3.3.0",
-    "mongoose": "^4.2.9"
+    "jsonwebtoken": "^5.4.1",
+    "mongoose": "^4.2.9",
+    "path": "^0.12.7"
   },
   "repository": {
     "type": "git",

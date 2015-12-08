@@ -1,5 +1,6 @@
 var express = require('express');
 var BadSanta = require('../models/badsanta');
+var User = require('../models/user');
 var router = express.Router();
 
 router.route('/')
@@ -11,6 +12,11 @@ router.route('/')
   })
   .post(function(req, res) {
     BadSanta.create(req.body, function(err, badsanta) {
+      User.findById(req.body._creator, function(err, user){
+        user.badsantas.push(badsanta);
+        user.save();
+        console.log(user);
+      })
       if (err) return res.status(500).send(err);
       res.send(badsanta);
     });

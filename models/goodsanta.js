@@ -6,7 +6,8 @@ var GoodSantaSchema = new mongoose.Schema({
   strength: String,
   weakness: String,
   bio: String,
-  image: String
+  image: String,
+  _creator: {type:String, ref:"user"}
 });
 
 module.exports = mongoose.model('GoodSanta', GoodSantaSchema);

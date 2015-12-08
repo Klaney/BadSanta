@@ -1,0 +1,21 @@
+<h1>New Bad Santa!</h1>
+<form role="form" ng-submit="createBadSanta(santa)">
+	<legend>Create a new Bad Santa</legend>
+
+	<div class="form-group">
+		<label for="">Name</label>
+		<input type="string" class="form-control" id="manufacturer" name="manufacturer" placeholder="New Santa Name" ng-model="santa.name" />
+		<label for="">Specialty</label>
+		<input type="string" class="form-control" id="model" name="model" placeholder="What's it's Specialty?" ng-model="santa.specialty"/>
+		<label for="">Strength</label>
+		<input type="string" class="form-control" id="engines" name="engines" placeholder="Strength?" ng-model="santa.strength"/>
+		<label for="">Weakness</label>
+		<input type="string" class="form-control" id="url" name="url" placeholder="Weakness?" ng-model="santa.weakness"/>
+		<label for="">Bio</label>
+		<input type="string" class="form-control" id="url" name="url" placeholder="Biography" ng-model="santa.bio"/>
+		<label for="">Image URL</label>
+		<input type="string" class="form-control" id="url" name="url" placeholder="Url of Img" ng-model="santa.image"/>
+		<input class="btn btn-primary" type="submit" id="submit" value="Submit" />
+	</div>
+	
+</form>
