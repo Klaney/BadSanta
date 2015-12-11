@@ -8,7 +8,7 @@ var BadSantaSchema = new mongoose.Schema({
   weakness: String,
   bio: String,
   image: String,
-  _creator: {type:String, ref:"user"}
+  _creator: String
 });
 
 module.exports = mongoose.model('BadSanta', BadSantaSchema);

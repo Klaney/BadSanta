@@ -1,7 +1,17 @@
 console.log("Controller Loaded");
 angular.module('SantaCtrls', ["SantaServices"])
-.controller('SantaCtrl',['$scope', 'BadSantas', 'GoodSantas', function($scope, BadSantas, GoodSantas) {
+.controller('SantaCtrl',['$scope', 'BadSantas', 'GoodSantas', 'Users', function($scope, BadSantas, GoodSantas, Users) {
     $scope.santas =[];
+
+
+    $scope.user;
+    Users.query(function success(data){
+    	$scope.user = data[0].id;
+    	console.log($scope.user)
+    }, function error (data){
+    	console.log(data);
+    })
+
 
     BadSantas.query(function success(data) {
         $scope.santas = data;
@@ -22,8 +32,8 @@ angular.module('SantaCtrls', ["SantaServices"])
         newBadSanta.weakness = santa.weakness;
         newBadSanta.bio = santa.bio;
         newBadSanta.image = santa.image;
+        newBadSanta._creator = $scope.user;
         newBadSanta.$save();
-        console.log(santa);
         console.log(newBadSanta);
     };
     $scope.createGoodSanta = function(santa){
@@ -34,6 +44,7 @@ angular.module('SantaCtrls', ["SantaServices"])
         newGoodSanta.weakness = santa.weakness;
         newGoodSanta.bio = santa.bio;
         newGoodSanta.image = santa.image;
+        newGoodSanta._creator = $scope.user;
         newGoodSanta.$save();
         console.log(santa);
         console.log(newGoodSanta);

@@ -12,9 +12,9 @@ router.route('/')
   })
   .post(function(req, res) {
     BadSanta.create(req.body, function(err, badsanta) {
-      User.findById(req.body._creator, function(err, user){
+      console.log(badsanta);
+      User.findById(badsanta._creator, function(err, user){
         user.badsantas.push(badsanta);
-        user.save();
         console.log(user);
       })
       if (err) return res.status(500).send(err);

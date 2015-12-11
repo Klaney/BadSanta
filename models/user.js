@@ -8,7 +8,7 @@ var UserSchema = mongoose.Schema({
   email: String,
   password: String,
   goodsantas: [{type: String, ref: "goodsanta" }],
-  badsantas: [{type:Schema.Types.ObjectId, ref: "BadSanta"}]
+  badsantas: [{type:String, ref: "badsanta"}]
 });
 
 UserSchema.set('toJSON', {

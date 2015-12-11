@@ -21,12 +21,16 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
     controller: 'SantaCtrl'
   })
   .when('/signup', {
-    templateUrl: 'app/views/userSignup.html',
+    templateUrl: 'app/views/signup.html',
     controller: 'SignupCtrl'
   })
   .when('/login', {
-    templateUrl: 'app/views/userLogin.html',
+    templateUrl: 'app/views/login.html',
     controller: 'LoginCtrl'
+  })
+  .when('/show', {
+    templateUrl:'app/views/show.html',
+    controller: 'SantaCtrl'
   })
   .otherwise({
     templateUrl: 'app/views/404.html'

@@ -1,9 +1,12 @@
 angular.module('SantaServices', ['ngResource'])
 .factory('BadSantas', ['$resource', 'Auth', function($resource, Auth) {
-  return $resource('http://localhost:3000/api/badsanta/:id');
+  return $resource('http://localhost:3000/api/badsanta');
 }])
 .factory('GoodSantas', ['$resource', 'Auth', function($resource, Auth) {
-  return $resource('http://localhost:3000/api/goodsanta/:id');
+  return $resource('http://localhost:3000/api/goodsanta');
+}])
+.factory('Users', ['$resource', 'Auth', function($resource, Auth){
+	return $resource('http://localhost:3000/api/users');
 }])
 .factory("Auth", ['$window', "$rootScope",  function($window){
 	return {
