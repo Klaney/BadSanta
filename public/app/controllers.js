@@ -3,7 +3,6 @@ angular.module('SantaCtrls', ["SantaServices"])
 .controller('SantaCtrl',['$scope', 'BadSantas', 'GoodSantas', 'Users', function($scope, BadSantas, GoodSantas, Users) {
     $scope.santas =[];
 
-
     $scope.user;
     Users.query(function success(data){
     	$scope.user = data[0].id;
